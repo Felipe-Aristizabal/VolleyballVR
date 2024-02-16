@@ -1,0 +1,54 @@
+{
+    "name": "HTCVive Tracker Input",
+    "maps": [
+        {
+            "name": "Tracker Input",
+            "id": "96d30034-2266-466b-b51d-ad1200821155",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "ce956c20-6243-454a-ac9a-a596e7dc48bb",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "999245d6-e18a-4c41-b88c-2b6da5b00009",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "59f72e48-8de9-4332-b3c5-ffbad222f577",
+                    "path": "<XRViveTracker>/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9429d82d-5b78-470f-a043-6c41abb92be2",
+                    "path": "<XRViveTracker>/devicePose/rotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
