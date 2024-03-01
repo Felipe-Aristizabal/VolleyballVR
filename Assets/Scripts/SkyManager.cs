@@ -6,7 +6,7 @@ public class SkyManager : MonoBehaviour
 {
 
     [SerializeField] 
-    private float speedSky = 1/2;
+    private float speedSky = 0.5f;
     
     // Update is called once per frame
     void Update()
