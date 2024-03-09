@@ -19,6 +19,11 @@ public class ReappearObjects : MonoBehaviour
         if (other.name == objectToReappear.name)
         {
             objectToReappear.transform.position = objectPositionToReappear;
+            Rigidbody rb = objectToReappear.GetComponent<Rigidbody>();
+            rb.velocity = new Vector3(0f, 0f, 0f);
+            rb.angularVelocity = new Vector3(0f, 0f, 0f);
+            rb.useGravity = false;
+
             if (this.gameObject.name == "Point")
             {
                 // Agregar punto
