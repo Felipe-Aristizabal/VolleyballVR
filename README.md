@@ -23,6 +23,6 @@ To dive into VolleyBall VR, you'll need the following:
 
 ## Contact
 
-For more information about VolleyBall VR and our other projects, follow me on [LinkedIn](https://www.linkedin.com/in/felipearistizabal/) and check out my [GitHub]([#](https://github.com/Felipe-Aristizabal)) profile. If you want to be a small gameplay, you can chek this [Video in YouTube]([https://www.linkedin.com/in/felipearistizabal/](https://www.youtube.com/watch?v=3O3-zCHomNg))
+For more information about VolleyBall VR and our other projects, follow me on [LinkedIn](https://www.linkedin.com/in/felipearistizabal/) and check out my [GitHub](https://github.com/Felipe-Aristizabal) profile. If you want to be a small gameplay, you can chek this [Video in YouTube](https://www.youtube.com/watch?v=3O3-zCHomNg)
 
 Your feedback and questions are appreciated!
