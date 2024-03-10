@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,11 +8,15 @@ public class ReappearObjects : MonoBehaviour
 {
     [SerializeField] private GameObject objectToReappear;
     [SerializeField] private GameObject[] positionsToReappear;
+    [SerializeField] private TextMeshPro scoreText;
+    [SerializeField] private VolleyballManager _VolleyballManagerScript;
     private Quaternion objectRotationToReappear;
+    private int score;
 
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
         objectRotationToReappear = objectToReappear.transform.rotation;
     }
 
@@ -19,20 +24,22 @@ public class ReappearObjects : MonoBehaviour
     {
         if (other.name == objectToReappear.name)
         {
-            objectToReappear.transform.position = KnowWhereReappear();
-            objectToReappear.transform.rotation = objectRotationToReappear;
-            Rigidbody rb = objectToReappear.GetComponent<Rigidbody>();
-            rb.velocity = new Vector3(0f, 0f, 0f);
-            rb.angularVelocity = new Vector3(0f, 0f, 0f);
-            rb.useGravity = false;
+            ReappearBall();
 
             if (this.gameObject.name == "Point")
             {
-                // Agregar punto
+                score++;
+                _VolleyballManagerScript.score = score;
+                scoreText.text = $"Your score: {score}";
             }
             else if (this.gameObject.name == "No Point")
             {
-                // Restar punto
+                if (score > 0)
+                {
+                    score--;
+                    _VolleyballManagerScript.score = score;
+                }
+                scoreText.text = $"Your score: {score}";
             }
         }
     }
@@ -41,5 +48,26 @@ public class ReappearObjects : MonoBehaviour
     {
         int randomIndex = Random.Range(0, positionsToReappear.Length);
         return positionsToReappear[randomIndex].gameObject.transform.position;
+    }
+
+    public void EndGame(string EndText)
+    {
+        scoreText.text = EndText;
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+        scoreText.text = $"Your score: {score}";
+    }
+
+    public void ReappearBall()
+    {
+        objectToReappear.transform.position = KnowWhereReappear();
+        objectToReappear.transform.rotation = objectRotationToReappear;
+        Rigidbody rb = objectToReappear.GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0f, 0f, 0f);
+        rb.angularVelocity = new Vector3(0f, 0f, 0f);
+        rb.useGravity = false;
     }
 }
